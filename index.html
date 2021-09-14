@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Evacuation map</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Glory:wght@300&display=swap" rel="stylesheet">
+    <style>
+      .align-center{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+      .special-font{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-family: 'Glory', sans-serif;
+        font-size: 40px;
+      }
+      .special-font-smaller{
+        margin-top: 0px;
+        margin-bottom: 5px;
+        font-family: 'Glory', sans-serif;
+        font-size: 20px;
+      }
+      .give-margin-top{
+        flex: 1;
+        margin-top: 10px;
+      }
+      .button-container{
+        max-width: 400px;
+      }
+      .evac-button{
+        width: 140px;
+        margin: 10px;
+        border-radius: 2px;
+        outline: none;
+        border: none;
+        box-shadow: 1px 2px #888888;
+        height: 40px;
+        font-size: 18px;
+        background-color: tomato;
+        color: white;
+        cursor: pointer;
+        transition: .3s ease-in-out;
+        font-family: 'Glory', sans-serif;
+      }
+      .evac-button:hover{
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="align-center">
+      <div>
+        <div class="align-center">
+          <h2 class="special-font">Facility Evacuation Plan</h2>
+        </div>
+        <div class="give-margin-top">
+          <div class="align-center">
+            <img src="images/evac-base-map.png" id="evacuation-map" height="400" width="auto" />
+          </div>
+          <div class="align-center">
+            <h4 class="special-font-smaller">How to evacuate your building from...</h4>
+          </div>
+          <div class="align-center">
+            <div class="button-container">
+              <div class="align-center">
+                <button class="evac-button" onclick="evacuateFromCafeteria()">
+                  Cafeteria
+                </button>
+                <button class="evac-button" onclick="evacuateFromWelding()">
+                  Welding shop
+                </button>
+              </div>
+              <div class="align-center">
+                <button class="evac-button" onclick="evacuateFromMachine()">
+                  Machine shop
+                </button>
+                <button class="evac-button" onclick="evacuateFromProduction()">
+                  Production floor
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function evacuateFromCafeteria(){
+        document.getElementById("evacuation-map").src = "images/evac-cafeteria.png"
+      }
+      function evacuateFromWelding(){
+        document.getElementById("evacuation-map").src = "images/evac-welding.png"
+      }
+      function evacuateFromMachine(){
+        document.getElementById("evacuation-map").src = "images/evac-machine.png"
+      }
+      function evacuateFromProduction(){
+        document.getElementById("evacuation-map").src = "images/evac-production.png"
+      }
+    </script>
+  </body>
+</html>
